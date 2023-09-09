@@ -9,13 +9,13 @@ const getDataAll = data => {
 const getDataById = data => {
   return (req, res) => {
     const { id } = req.params;
-    const student = data.find(item => item.id === id);
+    const result = data.find(item => item.id === id);
 
-    if (!student) {
+    if (!result) {
       return res.status(404).json({ message: 'Không tìm thấy' });
     }
 
-    res.json({ data: student });
+    res.json({ data: result });
   };
 };
 
@@ -29,14 +29,14 @@ const postData = data => {
       return res.status(401).json('Dữ liệu không hợp lệ');
     }
 
-    const newStudent = {
+    const newItem = {
       id: uuidv4(),
       name,
       gender,
       classCode
     };
 
-    data.push(newStudent);
+    data.push(newItem);
 
     res.json({ data: students });
   };
