@@ -1,6 +1,7 @@
 import express from 'express';
 import systemRouter from './symstem.route.js';
 import studentRouter from './student.route.js';
+import teacherRouter from './teacher.route.js';
 import apiKeyCheckerMiddleware from '../utils/middlewares/apiKeyChecker.js';
 import logRequestMiddleware from '../utils/middlewares/logRequest.js';
 
@@ -11,5 +12,6 @@ router.use('/symstem/statistic', systemRouter);
 router.use(logRequestMiddleware);
 router.use(apiKeyCheckerMiddleware);
 router.use('/students', studentRouter);
+router.use('/teachers', teacherRouter);
 
 export default router;
