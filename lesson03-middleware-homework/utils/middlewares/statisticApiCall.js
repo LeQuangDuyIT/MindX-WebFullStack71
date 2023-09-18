@@ -14,7 +14,6 @@ const statisticApiCallMiddleware = resourceName => {
     }
 
     const updatedCouter = userStatistic[index][resourceName] + 1;
-    console.log(updatedCouter);
     userStatistic[index] = { ...userStatistic[index], [resourceName]: updatedCouter };
 
     next();
